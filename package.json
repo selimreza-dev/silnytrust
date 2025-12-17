@@ -1,0 +1,25 @@
+{
+  "name": "silnytrust",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "npx @tailwindcss/cli -i ./assets/src/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selimreza-dev/silnytrust.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/selimreza-dev/silnytrust/issues"
+  },
+  "homepage": "https://github.com/selimreza-dev/silnytrust#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
