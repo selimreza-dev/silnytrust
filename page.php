@@ -41,7 +41,7 @@ get_header(); ?>
 
     <!-- page area -->
     <section id="page-area">
-        <div class="page-area w-12/12 mx-auto px-5 py-5 flex items-center justify-between sm:w-11/12">
+        <div class="page-area w-12/12 mx-auto px-5 py-5 sm:w-11/12">
             <?php get_template_part('template_part/page_setup'); ?>
         </div>
     </section>

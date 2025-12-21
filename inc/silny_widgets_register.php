@@ -44,5 +44,17 @@ function silnytrust_widgets_register()
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ));
+
+    // shop sidebar for woocommerce
+
+    register_sidebar(array(
+        'name' => __('Shop Sidebar', 'silnytrust'),
+        'id' => 'shop-sidebar',
+        'description' => __('This is Woocommerce shop sidebar', 'silnytrust'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
 }
 add_action('widgets_init', 'silnytrust_widgets_register');
