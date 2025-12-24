@@ -1,20 +1,9 @@
 <?php
-// theme all function file area included here
+// theme all functions are here.
 
-// silny_default.php file 
-include_once('inc/silny_default.php');
-
-
-// silny_enqueue.php file 
-include_once('inc/silny_enqueue.php');
+// theme setup function
+include_once('inc/theme_setup.php');
 
 
-// silny_customize_register.php file 
-include_once('inc/silny_customize_register.php');
-
-
-// silny_widgets_register.php file 
-include_once('inc/silny_widgets_register.php');
-
-// silny_woocommerce.php file 
-include_once('inc/silny_woocommerce.php');
+// theme_files_enqueue
+include_once('inc/theme_files_enqueue.php');

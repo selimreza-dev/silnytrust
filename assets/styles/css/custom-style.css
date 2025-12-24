@@ -1,0 +1,78 @@
+/* ========================
+    Global Style
+=========================*/
+/* Font Family */
+@font-face {
+  font-family: shurjo-regular;
+  src: url(../../fonts/Shurjo-Regular.ttf);
+}
+@font-face {
+  font-family: shurjo-bold;
+  src: url(../../fonts/Shurjo-bold.ttf);
+}
+
+/* English font */
+p {
+  font-family: "Open Sans", sans-serif, "shurjo-regular";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+h6,
+a {
+  font-family: "Barlow Condensed", sans-serif, "shurjo-bold";
+}
+
+.bangla-font-regular {
+  font-family: shurjo-regular;
+}
+.bangla-font-bold {
+  font-family: shurjo-bold;
+}
+
+/* Color */
+:root {
+  --primary-color: #f42e6a;
+  --secondary-color: #364153;
+  --light-color: #fff7fa;
+}
+.primary-color-bg {
+  background-color: var(--primary-color);
+}
+.primary-color-text {
+  color: var(--primary-color);
+}
+.secondary-color-bg {
+  background-color: var(--secondary-color);
+}
+.secondary-color-text {
+  color: var(--secondary-color);
+}
+.light-color-bg {
+  background-color: var(--light-color);
+}
+.light-color-text {
+  color: var(--light-color);
+}
+
+/* =========================================
+        ------Primary Menu Style--------
+===========================================*/
+#primary-menu {
+  display: flex;
+  gap: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+}
+#primary-menu a {
+  padding: 10px;
+  color: var(--secondary-color);
+}
+#primary-menu a:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
