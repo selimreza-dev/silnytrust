@@ -1,35 +1,27 @@
 <?php
-// Main Blog page
+// Blog  Cagetory Page
 
 get_header(); ?>
 
 <main>
 
-    <!-- Blog page title -->
+    <!-- Cagetory page title -->
     <?php
     $page_header_img = get_template_directory_uri() . '/assets/img/page-bg-img.png';
     ?>
-    <!-- page title section  - main area -->
+    <!-- Cagetory page title section  - main area -->
     <section id="page-title" class="w-full h-40 page-title" style="background-image: url('<?php echo $page_header_img; ?>'); background-position:center; background-size:cover; background-repeat:no-repeat;">
-        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text">
+        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text-color">
             <div class="flex flex-col items-center justify-center gap-3">
-                <!-- Page Title -->
+                <!--Cagetory Page Title -->
                 <div>
-                    <h1 class="uppercase text-2xl sm:text-3xl font-semibold light-color-text ">
-                        <?php
-                        if (get_option('page_for_posts')) {
-                            echo esc_html(get_the_title(get_option('page_for_posts')));
-                        } else {
-                            echo esc_html('Blog');
-                        }
-                        ?>
-                    </h1>
+                    <h1 class="uppercase text-2xl sm:text-3xl light-color-text font-medium"><?php single_cat_title(); ?></h1>
                 </div>
                 <!-- Page Navigate -->
                 <div>
                     <p class=" flex items-center justify-center gap-2">
                         <span>
-                            <a class="home-page-navigate light-color-text hover:primary-color-text" href="<?php echo home_url(); ?>"><span>HOME</span></a>
+                            <a class="home-page-navigate light-color-text hover:primary-text-color" href="<?php echo home_url(); ?>"><span>HOME</span></a>
                         </span>
                         <span class="light-color-text">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
@@ -37,16 +29,9 @@ get_header(); ?>
                             </svg>
 
                         </span>
-                        <span class="uppercase light-color-text primary-font">
-                            <?php
-
-                            if (get_option('page_for_posts')) {
-                                echo esc_html(get_the_title(get_option('page_for_posts')));
-                            } else {
-                                echo esc_html('Blog');
-                            }
-
-                            ?>
+                        <span class="uppercase light-color-text archive-title primary-font">
+                            <?php the_archive_title(); ?>
+                        </span>
                         </span>
                     </p>
                 </div>

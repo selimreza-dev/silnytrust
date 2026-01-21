@@ -1,29 +1,21 @@
 <?php
-// Main Blog page
+// Blog Tag Page
 
 get_header(); ?>
 
 <main>
 
-    <!-- Blog page title -->
+    <!-- Tag page title -->
     <?php
     $page_header_img = get_template_directory_uri() . '/assets/img/page-bg-img.png';
     ?>
-    <!-- page title section  - main area -->
+    <!-- Tag page title section  - main area -->
     <section id="page-title" class="w-full h-40 page-title" style="background-image: url('<?php echo $page_header_img; ?>'); background-position:center; background-size:cover; background-repeat:no-repeat;">
-        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text">
+        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text-color">
             <div class="flex flex-col items-center justify-center gap-3">
-                <!-- Page Title -->
+                <!--Tag Page Title -->
                 <div>
-                    <h1 class="uppercase text-2xl sm:text-3xl font-semibold light-color-text ">
-                        <?php
-                        if (get_option('page_for_posts')) {
-                            echo esc_html(get_the_title(get_option('page_for_posts')));
-                        } else {
-                            echo esc_html('Blog');
-                        }
-                        ?>
-                    </h1>
+                    <h1 class="uppercase text-2xl sm:text-3xl light-color-text font-medium"><?php single_tag_title(); ?></h1>
                 </div>
                 <!-- Page Navigate -->
                 <div>
@@ -37,16 +29,9 @@ get_header(); ?>
                             </svg>
 
                         </span>
-                        <span class="uppercase light-color-text primary-font">
-                            <?php
-
-                            if (get_option('page_for_posts')) {
-                                echo esc_html(get_the_title(get_option('page_for_posts')));
-                            } else {
-                                echo esc_html('Blog');
-                            }
-
-                            ?>
+                        <span class="uppercase light-color-text archive-title primary-font">
+                            <?php the_archive_title(); ?>
+                        </span>
                         </span>
                     </p>
                 </div>
@@ -56,7 +41,7 @@ get_header(); ?>
 
     <!-- blog area -->
     <section id="blogs" class="py-10">
-        <div class="content-wrapper max-w-full mx-auto px-5 py-2 flex items-start justify-between md:max-w-7xl gap-5 flex-wrap lg:flex-nowrap">
+        <div class="content-wrapper w-12/12 mx-auto px-5 py-2 flex items-start justify-between md:w-7xl gap-5 flex-wrap lg:flex-nowrap">
             <div class="blog-area w-12/12 lg:w-9/12">
                 <?php get_template_part('template_part/blog_setup') ?>
             </div>

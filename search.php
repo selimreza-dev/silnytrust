@@ -1,27 +1,23 @@
 <?php
-// Main Blog page
+// Blog Search Page
 
 get_header(); ?>
 
 <main>
 
-    <!-- Blog page title -->
+    <!-- Search page title -->
     <?php
     $page_header_img = get_template_directory_uri() . '/assets/img/page-bg-img.png';
     ?>
-    <!-- page title section  - main area -->
+    <!-- Search page title section  - main area -->
     <section id="page-title" class="w-full h-40 page-title" style="background-image: url('<?php echo $page_header_img; ?>'); background-position:center; background-size:cover; background-repeat:no-repeat;">
-        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text">
+        <div class="page-title-container flex items-center justify-center w-full h-full gray-page-bg white-text-color">
             <div class="flex flex-col items-center justify-center gap-3">
-                <!-- Page Title -->
+                <!--Search Page Title -->
                 <div>
-                    <h1 class="uppercase text-2xl sm:text-3xl font-semibold light-color-text ">
+                    <h1 class="uppercase text-2xl sm:text-3xl light-color-text font-medium">
                         <?php
-                        if (get_option('page_for_posts')) {
-                            echo esc_html(get_the_title(get_option('page_for_posts')));
-                        } else {
-                            echo esc_html('Blog');
-                        }
+                        printf(esc_html__('Search result for - %s ', 'silnytrust'), esc_html(get_search_query()));
                         ?>
                     </h1>
                 </div>
@@ -29,7 +25,7 @@ get_header(); ?>
                 <div>
                     <p class=" flex items-center justify-center gap-2">
                         <span>
-                            <a class="home-page-navigate light-color-text hover:primary-color-text" href="<?php echo home_url(); ?>"><span>HOME</span></a>
+                            <a class="home-page-navigate light-color-text hover:primary-text-color" href="<?php echo home_url(); ?>"><span>HOME</span></a>
                         </span>
                         <span class="light-color-text">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
@@ -37,16 +33,9 @@ get_header(); ?>
                             </svg>
 
                         </span>
-                        <span class="uppercase light-color-text primary-font">
-                            <?php
-
-                            if (get_option('page_for_posts')) {
-                                echo esc_html(get_the_title(get_option('page_for_posts')));
-                            } else {
-                                echo esc_html('Blog');
-                            }
-
-                            ?>
+                        <span class="uppercase light-color-text archive-title primary-font">
+                            <?php printf(esc_html(get_search_query())); ?>
+                        </span>
                         </span>
                     </p>
                 </div>

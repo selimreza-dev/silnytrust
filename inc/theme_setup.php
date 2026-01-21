@@ -21,6 +21,20 @@ function silnytrust_theme_setup()
         'flex-height' => true,
         'flex-width' => true
     ));
+
+    // woocommerce support
+    add_theme_support('woocommerce', array(
+        'thumbnail_image_width' => 300,
+        'single_image_width' => 600,
+        'product_grid' => array(
+            'default_rows' => 3,
+            'min_rows' => 1,
+            'max_rows' => 5,
+            'default_columns' => 4,
+            'min_columns' => 2,
+            'max_columns' => 5
+        ),
+    ));
 }
 add_action('after_setup_theme', 'silnytrust_theme_setup');
 
@@ -37,3 +51,18 @@ function silnytrust_register_nav_menus()
     );
 }
 add_action('init', 'silnytrust_register_nav_menus');
+
+
+// post excerpt word
+function silnytrust_post_excerpt_word($length)
+{
+    return 20;
+}
+add_filter('excerpt_length', 'silnytrust_post_excerpt_word');
+
+// post excerpt read more button
+function silnytrust_post_read_more($more)
+{
+    return '';
+}
+add_filter('excerpt_more', 'silnytrust_post_read_more');
